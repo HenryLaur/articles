@@ -1,16 +1,16 @@
 .card {
-  width: calc(20% - 20px);
+  width: calc(25% - 30px);
   padding: 10px;
 }
 
 @media (max-width: 1200px) {
   .card {
-    width: calc(25% - 20px);
+    width: calc(33% - 30px);
   }
 }
 @media (max-width: 900px) {
   .card {
-    width: calc(33% - 20px);
+    width: calc(50% - 30px);
   }
 }
 
@@ -18,4 +18,9 @@
   .card {
     width: 100%;
   }
+}
+
+.author {
+  width: 100%;
+  text-align: end;
 }

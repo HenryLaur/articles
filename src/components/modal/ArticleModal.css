@@ -3,7 +3,7 @@
   position: absolute;
   margin: 5%;
   outline: none;
-  max-width: 90%;
+  width: 90%;
 }
 .modal {
   overflow: auto;
