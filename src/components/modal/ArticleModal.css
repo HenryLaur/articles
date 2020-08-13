@@ -1,0 +1,15 @@
+.content {
+  background: white;
+  position: absolute;
+  margin: 5%;
+  outline: none;
+  max-width: 90%;
+}
+.modal {
+  overflow: auto;
+}
+.spinner {
+  text-align: center;
+  margin-top: 45vh;
+  outline: none;
+}

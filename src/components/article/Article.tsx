@@ -1,23 +1,14 @@
 import React, { useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import {
   Card,
   CardActionArea,
   CardMedia,
   CardContent,
   Typography,
-  CardActions,
-  Button,
 } from "@material-ui/core";
 import { Article as IArticle } from "./ArticleSlice";
 import { ArticleModal } from "../modal/ArticleModal";
-const useStyles = makeStyles({
-  root: {
-    width: 345,
-    maxWidth: 345,
-    margin: "10px",
-  },
-});
+import "./Article.css";
 export const Article: React.FC<IArticle> = ({
   author,
   content,
@@ -27,12 +18,11 @@ export const Article: React.FC<IArticle> = ({
   pictureUrl,
   title,
 }) => {
-  const classes = useStyles();
   const [modalOpen, setModalOpen] = useState(false);
   const date = new Date(isoDate);
   return (
-    <div>
-      <Card className={classes.root} onClick={() => setModalOpen(true)}>
+    <div className="card">
+      <Card onClick={() => setModalOpen(true)}>
         <CardActionArea>
           <CardMedia component="img" height="140" src={pictureUrl} />
           <CardContent>
