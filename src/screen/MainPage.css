@@ -2,3 +2,9 @@
   display: flex;
   flex-wrap: wrap;
 }
+.spinner {
+  text-align: center;
+  margin-top: 45vh;
+  outline: none;
+  width: 100%;
+}

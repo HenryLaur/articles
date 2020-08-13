@@ -4,6 +4,7 @@ import { RootState } from "../store/Store";
 import { Article } from "../components/article/Article";
 import "./MainPage.css";
 import { getRss } from "../components/rss/RssActions";
+import CircularProgress from "@material-ui/core/CircularProgress";
 export const MainPage = () => {
   const articles = useSelector((state: RootState) => state.articles.articles);
 
@@ -12,9 +13,15 @@ export const MainPage = () => {
   }, []);
   return (
     <div className="mainPage">
-      {articles.map((article) => {
-        return <Article {...article} />;
-      })}
+      {articles.length === 0 ? (
+        <div className="spinner">
+          <CircularProgress />
+        </div>
+      ) : (
+        articles.map((article) => {
+          return <Article {...article} />;
+        })
+      )}
     </div>
   );
 };

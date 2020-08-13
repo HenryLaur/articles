@@ -1,12 +1,5 @@
 import React, { useState } from "react";
-import {
-  Card,
-  CardActionArea,
-  CardMedia,
-  CardContent,
-  Typography,
-  Grid,
-} from "@material-ui/core";
+import { Card, CardMedia, Typography } from "@material-ui/core";
 import { Article as IArticle } from "./ArticleSlice";
 import { ArticleModal } from "../modal/ArticleModal";
 import "./Article.css";
@@ -24,7 +17,7 @@ export const Article: React.FC<IArticle> = ({
   return (
     <div className="card">
       <Card onClick={() => setModalOpen(true)}>
-        <CardMedia component="img" height="140" src={pictureUrl} />
+        <CardMedia component="img" height="280" src={pictureUrl} />
         <Typography gutterBottom variant="h5" component="h2">
           {title}
         </Typography>
