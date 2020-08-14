@@ -4,8 +4,9 @@ import { Modal } from "@material-ui/core";
 import Mercury from "@postlight/mercury-parser";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import "./ArticleModal.css";
+
 interface IArticeModal {
-  handleClose: any;
+  handleClose: () => void;
   open: boolean;
   link: string;
 }
@@ -17,7 +18,7 @@ export const ArticleModal: React.FC<IArticeModal> = ({
 }) => {
   const [content, setContent] = useState<any>("");
   useEffect(() => {
-    const getContent = async () => {
+    const getContent = () => {
       if (open === true && content === "") {
         Mercury.parse("https://cors-anywhere.herokuapp.com/" + link).then(
           (result: any) => {
@@ -28,8 +29,6 @@ export const ArticleModal: React.FC<IArticeModal> = ({
     };
     getContent();
   }, [open, content, setContent, link]);
-
-  console.log(content);
 
   return (
     <div>
